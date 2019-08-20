@@ -23,7 +23,16 @@ namespace LeetCode_Solutions
             var originLists = CreateLinkedList(new int[5] { 1, 2, 3, 4, 5 });
             var result = CreateLinkedList(new int[5] {5, 4, 3, 2, 1});
             ListToString(ReverseList(originLists)).ShouldBe(ListToString(result));
-            
+
+        }
+        [TestMethod]
+        public void LinkedListShouldReverse_WithRecursion()
+        {
+
+            var originLists = CreateLinkedList(new int[5] { 1, 2, 3, 4, 5 });
+            var result = CreateLinkedList(new int[5] { 5, 4, 3, 2, 1 });
+            ListToString(ReverseListWithRecursion(originLists)).ShouldBe(ListToString(result));
+
         }
 
         private ListNode ReverseList(ListNode head)
@@ -39,6 +48,16 @@ namespace LeetCode_Solutions
             }
 
             return pre;
+        }
+
+        private ListNode ReverseListWithRecursion(ListNode head)
+        {
+            if (head?.next == null) return head;
+
+            var p = ReverseListWithRecursion(head.next);
+            head.next.next = head;
+            head.next = null;
+            return p;
         }
 
         private ListNode CreateLinkedList(int[] values)
