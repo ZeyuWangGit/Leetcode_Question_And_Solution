@@ -10,8 +10,11 @@ namespace LeetCode_Solutions
         {
 
         }
-        
 
+        private void SolutionToQuestion()
+        {
+
+        }
 
     }
 }
