@@ -26,15 +26,14 @@
             }
             else
             {
-                for (int i = 1; i < values.Length; i++)
+                for (var i = 1; i < values.Length; i++)
                 {
+                    current.next = new ListNode(values[i]);
+                    current = current.next;
                     if (pos == i)
                     {
                         posNode = current;
                     }
-
-                    current.next = new ListNode(values[i]);
-                    current = current.next;
                 }
 
                 current.next = posNode;
