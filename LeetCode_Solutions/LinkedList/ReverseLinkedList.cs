@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using LeetCode_Solutions.helpers;
+﻿using LeetCode_Solutions.helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
-namespace LeetCode_Solutions
+namespace LeetCode_Solutions.LinkedList
 {
     /**
         Reverse a singly linked list.

@@ -1,9 +1,8 @@
-﻿
-using LeetCode_Solutions.helpers;
+﻿using LeetCode_Solutions.helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
-namespace LeetCode_Solutions
+namespace LeetCode_Solutions.LinkedList
 {
     /*
      *  Given a linked list, swap every two adjacent nodes and return its head.

@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
-namespace LeetCode_Solutions
+namespace LeetCode_Solutions.LinkedList
 {
     /*
      *  Given a linked list, determine if it has a cycle in it.
