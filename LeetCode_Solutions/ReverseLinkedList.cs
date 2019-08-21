@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using LeetCode_Solutions.helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 
@@ -20,18 +21,18 @@ namespace LeetCode_Solutions
         public void LinkedListShouldReverse_WithNormalCase()
         {
 
-            var originLists = CreateLinkedList(new int[5] { 1, 2, 3, 4, 5 });
-            var result = CreateLinkedList(new int[5] {5, 4, 3, 2, 1});
-            ListToString(ReverseList(originLists)).ShouldBe(ListToString(result));
+            var originLists = ListNodeHelpers.CreateLinkedList(new int[5] { 1, 2, 3, 4, 5 });
+            var result = ListNodeHelpers.CreateLinkedList(new int[5] {5, 4, 3, 2, 1});
+            ListNodeHelpers.ListToString(ReverseList(originLists)).ShouldBe(ListNodeHelpers.ListToString(result));
 
         }
         [TestMethod]
         public void LinkedListShouldReverse_WithRecursion()
         {
 
-            var originLists = CreateLinkedList(new int[5] { 1, 2, 3, 4, 5 });
-            var result = CreateLinkedList(new int[5] { 5, 4, 3, 2, 1 });
-            ListToString(ReverseListWithRecursion(originLists)).ShouldBe(ListToString(result));
+            var originLists = ListNodeHelpers.CreateLinkedList(new int[5] { 1, 2, 3, 4, 5 });
+            var result = ListNodeHelpers.CreateLinkedList(new int[5] { 5, 4, 3, 2, 1 });
+            ListNodeHelpers.ListToString(ReverseListWithRecursion(originLists)).ShouldBe(ListNodeHelpers.ListToString(result));
 
         }
 
@@ -58,38 +59,6 @@ namespace LeetCode_Solutions
             head.next.next = head;
             head.next = null;
             return p;
-        }
-
-        private ListNode CreateLinkedList(int[] values)
-        {
-           var head = new ListNode(values[0]);
-           var current = head;
-           for (int i = 1; i < values.Length; i++)
-           {
-               current.next = new ListNode(values[i]);
-               current = current.next;
-           }
-           return head;
-        }
-
-        private string ListToString(ListNode node)
-        {
-            var result = "";
-            var current = node;
-            while (current != null)
-            {
-                result += current.val;
-                current = current.next;
-            }
-
-            return result;
-        }
-
-        public class ListNode
-        {
-            public int val;
-            public ListNode next;
-            public ListNode(int x) { val = x; }
         }
 
     }
